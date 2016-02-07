@@ -1,0 +1,33 @@
+#divAbout {
+    margin-left: 40px;
+    overflow: auto;
+    height: 100%;
+
+
+    #h1AboutHeading {
+        margin: 0;
+        padding: 30px 0 20px 0;
+        line-height: 1em;
+    }
+
+    #divContent {
+        margin-left: 20px;
+        padding-bottom: 20px;
+
+        > img {
+            padding-top: 20px;
+        }
+
+        h3:first-of-type {
+            padding-top: 0px;
+        }
+
+        > h3 {
+            padding: 15px 0 5px 0;
+        }
+
+        > p {
+            padding: 5px;
+        }
+    }
+}

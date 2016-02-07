@@ -1,0 +1,133 @@
+<!-- Search page -->
+<div id="divSearchMain" class="layoutBG">
+
+    <!-- Sidebar -->
+    <div id="divSidebar" class="layoutBG">
+
+        <div class="divSidebarHeading layoutBG">
+            <h1 class="center">Search</h1>
+        </div>
+
+        <hr class="hrSidebar">
+
+        <div class="divSidebarInner">
+
+            <!-- search by -->
+            <h2 class="h2Sidebar">Search By</h2>
+            <hr class="hrSidebar">
+            <div id="divCheckboxes">
+                <input type="checkbox" id="checkboxSearchTitle" checked="true" />
+                <label for="checkboxSearchTitle">Title</label>
+                <br>
+                <input type="checkbox" id="checkboxSearchCategory" checked="true" />
+                <label for="checkboxSearchCategory">Category</label>
+                <br>
+                <input type="checkbox" id="checkboxSearchDescription" checked="true" />
+                <label for="checkboxSearchDescription">Description</label>
+                <br>
+                <input type="checkbox" id="checkboxSearchTags" checked="true" />
+                <label for="checkboxSearchTags">Tags</label>
+            </div>
+
+            <!-- date started -->
+            <hr class="hrSidebar hrSidebarTop">
+            <h2 class="h2Sidebar">Date Started</h2>
+            <hr class="hrSidebar">
+            <table id="tableSerachDateStarted">
+                <tr>
+                    <td><label>From</label></td>
+                    <td>
+                        <input id="inputFromDate" class="inputCustom1 datepicker" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>To</label></td>
+                    <td>
+                        <input id="inputToDate" class="inputCustom1 datepicker" />
+                    </td>
+                </tr>
+            </table>
+
+
+            <!-- sort by -->
+            <hr class="hrSidebar hrSidebarTop">
+            <h2 class="h2Sidebar">Sort By</h2>
+            <hr class="hrSidebar">
+            <div id="divSortBy">
+                <input type="radio" name="radioSort" id="radioPoints" checked="true" />
+                <label for="radioPoints">Points</label>
+                <br>
+                <input type="radio" name="radioSort" id="radioDateStarted" />
+                <label for="radioDateStarted">Date Started</label>
+                <br>
+                <input type="radio" name="radioSort" id="radioCategories" />
+                <label for="radioCategories">Categories</label>
+                <br>
+                <input type="radio" name="radioSort" id="radioTitle" />
+                <label for="radioTitle">Title</label>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <!-- Main Serach Area -->
+    <div id="divContent" class="layoutBG">
+
+        <!-- search bar -->
+        <div id="divSearchBarContainer" class="layoutBG">
+            <div id="divSearchBar" class="layoutBG center">
+                <input id="inputSearchBar" class="inputCustom1" placeholder="Search..." />
+                <button id="buttonSearchBar" class="buttonCustom2">Search</button>
+            </div>
+        </div>
+
+
+        <!-- search results -->
+        <div id="divSearchResults" class="layoutBG">
+            <div id="divTales" class="layoutBG">
+            </div>
+        </div>
+
+
+        <!-- pagination -->
+        <div id="divPaginationContainer" class="layoutBG noselect">
+
+            <div id="divPaginationPageCount" class="layoutBG">
+                <div id="divPaginationPageCountInner" class="center layoutBG">
+                    <h3 id="h3PaginationPage"></h3>
+                    <label id="labelResults">0 Results</label>
+                </div>
+            </div>
+
+            <div id="divPaginationLinksContainer" class="layoutBG">
+                <div id="divPaginationLinks" class="center layoutBG">
+                    <a id="aLinkPaginationStart" class="aLink">start</a>
+                    <a id="aLinkPaginationPrev" class="aLink aLinkPagination">prev</a>
+                    <a id="aLinkPaginationNext" class="aLink aLinkPagination">next</a>
+                    <a id="aLinkPaginationEnd" class="aLink">end</a>
+                </div>
+            </div>
+
+            <div id="divPaginationGoToContainer">
+                <div id="divPaginationGoTo" class="layoutBG">
+                    Page No.
+                    <input id="inputPaginationPage" type="text" class="inputCustom1"
+                           title="Enter a page number" />
+                    <button id="buttonPaginationGo" class="buttonCustom2">Go</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+

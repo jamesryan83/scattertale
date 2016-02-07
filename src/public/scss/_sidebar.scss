@@ -1,0 +1,47 @@
+
+// sidebar
+
+#divSidebar {
+    height: 100%;
+    width: $divSidebarWidth;
+    background-color: $divSideBarColor;
+    float: left;
+    overflow-y: auto;
+
+
+    .divSidebarHeading {
+        position: relative;
+        height: 40px;
+
+        > h1 {
+            margin: 0;
+            font-size: 1.4em;
+        }
+    }
+
+    .divSidebarInner {
+        margin: 0 10px 10px 10px;
+
+        > .hrSidebar {
+            margin: 0 0 0 15px;
+        }
+    }
+
+    .h2Sidebar {
+        font-size: 1.1em;
+        margin: 5px;
+        cursor: default;
+    }
+
+    .hrSidebar {
+        background: $horizontalRuleColor;
+        border: 0;
+        height: 1px;
+    }
+
+    .hrSidebarTop {
+        margin-top: 20px;
+    }
+
+
+}

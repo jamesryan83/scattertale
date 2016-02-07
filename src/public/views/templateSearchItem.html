@@ -1,0 +1,17 @@
+<!-- Single item in search page results -->
+
+<div class="divTaleItemLeft">
+    <label class="center labelPoints"><%- points %></label>
+</div>
+
+<div class="divTaleItemImage">
+    <img src="res/taleItemIconDefault.jpg"
+        height="64" width="64" class="center imgTaleItem"></img>
+</div>
+
+<div class="divTaleItemRight">
+    <a class="aLink divTaleItemTitle"><%- title %></a>
+    <label class="divTaleItemCategory" href=""><%- category %></label>
+    <label class="divTaleItemDate">Started: <%- ST.util.getShortDate(timeCreatedTale) %></label>
+    <label class="divTaleItemDescription"><%- descriptionTale %></label>
+</div>

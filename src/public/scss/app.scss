@@ -1,0 +1,126 @@
+@font-face {
+    font-family: "open-sans";
+    src: url(../res/open-sans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "open-sans-light";
+    src: url(../res/open-sans/OpenSans-Light.ttf);
+}
+
+
+/* Variables */
+$fonts: open-sans-light; //Verdana, Geneva, sans-serif;
+
+$fontColor: #666;
+$linkColor1: #FF753E;
+$linkColor2: #de6332;
+$buttonColor1: #b3b3b3;
+$buttonColor2: #ff9971;
+$buttonColor3: #ffce4b;
+$buttonColor4: #2AD4FF;
+$buttonColor5: #2AFF7A;
+$buttonColor6: #fd7f7f;
+$backgroundColor1: #f2f2f2;
+$horizontalRuleColor: #dddddd;
+$divNavBarColor: #e6e6e6;
+$divSideBarColor: #f2f2f2;
+$divContentColor1: #f9f9f9;
+$divContentColor2: #ebebeb;
+
+$arrowColor: #c6c6c6; // svg arrows
+$contentAreaShadowColor: rgba(0,0,0,0.2);
+
+$divNavBarHeight: 40px;
+$divSidebarWidth: 320px;
+
+
+
+/* Imports */
+@import 'common';
+@import 'animation';
+@import 'index';
+@import 'editTale';
+@import 'search';
+@import 'help';
+@import 'editItem';
+@import 'account';
+@import 'about';
+@import 'sidebar';
+@import 'dialog';
+@import 'tale';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $fonts;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    color: $fontColor;
+    min-height: 560px;
+    overflow-x: hidden; // date input dialogs make bottom scrollbar appear
+    overflow-y: auto;
+}
+
+
+
+
+// main nav bar
+#divContainerMainNavBar {
+    min-width: 1000px;
+    display: none;
+    height: $divNavBarHeight;
+    background-color: $divNavBarColor;
+
+    #aLinkTitle {
+        float: left;
+        margin-left: 20px;
+        line-height: $divNavBarHeight;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    #divNavBarButtons {
+        position: relative;
+        float: right;
+        padding-right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: $divNavBarHeight;
+    }
+}
+
+
+
+
+// main div
+#divContainerMain {
+    min-width: 1000px;
+    background-color: $backgroundColor1;
+    overflow: hidden;
+}
+
+
+// dark div over elements
+#divDarkenScreen {
+    min-width: 1000px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: all;
+}
+
+
+#divDialogContainer {
+    z-index: 5000;
+}

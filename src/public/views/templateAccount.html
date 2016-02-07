@@ -1,0 +1,107 @@
+<!-- Account Page -->
+
+<div id="divAccount">
+
+    <% if (loggedIn === true) { %>
+
+        <!-- Sidebar -->
+        <div id="divSidebar">
+
+            <div class="divSidebarHeading layoutBG">
+                <h1 class="center">My Account</h1>
+            </div>
+
+            <hr class="hrSidebar">
+
+            <div class="divSidebarInner">
+                <h2 class="h2Sidebar" id="h2MyTales">My Tales</h2>
+                <hr class="hrSidebar">
+                <h2 class="h2Sidebar" id="h2AccountDetails">Account Details</h2>
+                <hr class="hrSidebar">
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Content -->
+        <div id="divContent">
+
+            <!-- My Tales -->
+            <div id="divMyTales" class="layoutBG">
+            </div>
+
+
+            <!-- Details -->
+            <div id="divAccountDetails"  class="layoutBG">
+                <h2>Account Details</h2>
+                <br>
+                <p>
+                    <b>Display Name</b> <br>
+                    <input id="inputAccountDisplayName" value="<%- displayName %>" class="inputCustom1" />
+                </p>
+
+                <p>
+                    <b>Location</b> <br>
+                    <input id="inputAccountLocation" value="<%- location %>" class="inputCustom1" />
+                </p>
+
+                <p>
+                    <b>Url</b> <br>
+                    <input id="inputAccountUrl" value="<%- url %>" class="inputCustom1" />
+                </p>
+
+                <p>
+                    <b>Description</b> <br>
+                    <input id="inputAccountDescription" value="<%- description %>" class="inputCustom1"/>
+                </p>
+
+                <p><b>Username</b> <%- username %></p>
+
+                <p><b>Email</b> <%- email %></p>
+
+                <p><b>Account Created</b> <%- ST.util.getShortDate(timeCreatedUser) %></p>
+
+                <p><b>Last Updated</b> <%- ST.util.getShortDate(timeUpdatedUser) %></p>
+
+
+                <div id="divPicture" class="layoutBG">
+                    <b>Picture</b>
+                    <input type="file" id="inputUploadPicture" />
+                    <a class="aLink2" id="aLinkPicture">Edit</a>
+
+                    <br>
+                    <img id="imgAccountPicture" height="128" width="128" />
+                </div>
+
+
+                <div id="divButtons"  class="layoutBG">
+                    <button class="buttonCustom2" id="buttonAccountSave">Save Changes</button>
+                    <button class="buttonCustom2" id="buttonAccountDelete">Delete Account</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    <!-- Not logged in, TODO: remove ? not really needed unless typed in url by accident -->
+    <% } else { %>
+
+        <div id="divAccountNotLoggedIn">
+            You're not logged in !
+            <br>
+            <br>
+            You can login or create an account on the <a href="#" class="aLink2">Home Page</a>
+            <br>
+            <br>
+            You need to have an account to create new Tales and promote your stuff and talk to people and whatever
+        </div>
+    <% } %>
+
+
+
+</div>
+
+

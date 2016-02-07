@@ -1,0 +1,62 @@
+<!-- Single Row on Edit Tale page -->
+
+<!-- Arrows and text -->
+<div class="divRowContent">
+    <div class="divRowContentLeft">
+        <div class="divRowArrowButton center noselect">
+            <img class="center" src="res/svg/arrow_left.svg" height="20" width="20" />
+        </div>
+    </div>
+
+    <div class="divRowContentMiddle"  draggable="false">
+
+        <div class="divRowContentContainer" draggable="false">
+
+            <div class="divRowDetails noselect" data-rowNumber="<%- rowNumber %>">
+
+                <div class="divRowDetailsLeft">
+                    <div class="divRowLabel">
+                        <b>Row</b> <label><%- rowNumber + 1 %></label>
+                    </div>
+                    <div class="divRowLabel">
+                        <b>Item</b> <label><%- itemNumber + 1 %></label>
+                    </div>
+                    <div class="divRowLabel">
+                        <b>Total Items</b> <label><%- totalItems %></label>
+                    </div>
+                    <div class="divRowLabel">
+                        <b>Author</b> <label><%- author %></label>
+                    </div>
+                    <div class="divRowItemIcons">
+                    </div>
+                </div>
+
+                <div class="divImgContainer">
+                    <div class="divImages">
+                        <img class="svg imgRowNotes" src="res/svg/icon_notes.svg" />
+                        <img class="svg imgRowEdit" src="res/svg/icon_edit.svg" />
+                        <img class="svg imgRowAdd" src="res/svg/icon_add.svg" />
+                        <img class="svg imgRowDelete" src="res/svg/icon_delete.svg" />
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- This div here is the Item part of the Row -->
+            <div id="divRowContentArea<%- rowNumber %>" class="divRowContentArea"  draggable="false"></div>
+        </div>
+    </div>
+
+    <div class="divRowContentRight">
+        <div class="divRowArrowButton center noselect">
+            <img class="center" src="res/svg/arrow_right.svg" height="20" width="20" />
+        </div>
+    </div>
+</div>
+
+
+<!-- For ckeditor -->
+<div class="divRowEditorContainer">
+    <div id="divRowEditingTop<%- rowNumber %>"></div>
+    <div id="divRowEditingBottom<%- rowNumber %>"></div>
+</div>

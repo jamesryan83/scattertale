@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="140" width="140" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<metadata>
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title/>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+    <path style="enable-background:accumulate;color:#b3b3b3;" fill-rule="evenodd" fill="#b3b3b3" d="M70,0c-11.863,0-21.406,9.5431-21.406,21.406v27.188h-27.188c-11.863,0-21.406,9.543-21.406,21.406s9.5431,21.406,21.406,21.406h27.188v27.188c0,11.87,9.543,21.41,21.406,21.41s21.406-9.5431,21.406-21.406v-27.188h27.188c11.87,0.004,21.41-9.539,21.41-21.402s-9.54-21.406-21.41-21.406h-27.188v-27.188c0.004-11.863-9.539-21.406-21.402-21.406z">
+        <title>Add a new Item to this Row</title>
+    </path>
+</svg>

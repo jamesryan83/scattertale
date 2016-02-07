@@ -1,0 +1,98 @@
+<div id="divIndexMain" class="layoutBG">
+
+    <div id="divBackground"></div>
+
+    <img id="imgUnderConstruction" src="../res/website_under_construction1.png" height="120px" />
+
+
+    <!-- Title -->
+    <div id="divTitle" class="layoutBG">
+        <img id="imgTitle" src="res/TitleFrame1.png" />
+        <img id="imgSearchIcon" src="res/search_icon.png" height="20" width="20" />
+        <input id="inputSearch" placeholder="Search..." class="inputCustom1" />
+        <button id="buttonSearch" class="buttonCustom1">Search</button>
+    </div>
+
+
+
+    <!-- Top right corner buttons and stuff -->
+    <div id="divTopRight"  class="layoutBG">
+        <label id="labelAbout">With Scattertale you can write stuff</label>
+        <button id="buttonAbout" class="buttonCustom1">About this site</button>
+        <button id="buttonTryItOut" class="buttonCustom1">Try It Out</button>
+    </div>
+
+
+
+
+    <!-- Forms -->
+    <div id="divFormsContainer" class="layoutBG">
+
+
+
+        <!-- Login -->
+        <div id="divFormLogin" class="divForm layoutBG">
+            <form id="formLogin">
+                <b>Login</b>
+                <hr class="hrCustom1">
+                <table class="tableForm">
+                    <tr>
+                        <td><b>Username</b></td>
+                        <td><input type="text" id="inputLoginUsername" class="inputCustom1"
+                                   name="username" placeholder="Someone" /> <br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password</b></td>
+                        <td><input type="password" id="inputLoginPassword" class="inputCustom1"
+                                   name="password" placeholder="Something123"/> <br></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="buttonLogin" type="button" class="buttonCustom1">Login</button>
+                            <br>
+                            <label id="labelLoginMessage"></label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+
+
+        <!-- Create Account -->
+        <div id="divFormCreateAccount" class="divForm layoutBG">
+            <form id="formCreateAccount">
+                <b>Create Account</b>
+                <hr class="hrCustom1">
+                <table class="tableForm">
+                    <tr>
+                        <td><b>Username</b></td>
+                        <td><input type="text" id="inputCreateAccountUsername" class="inputCustom1"
+                                   name="username" placeholder="Someone"
+                                   title="Username must have between 3 and 25 characters.  You can use a-z, A-Z, 0-9 and ._-"/> <br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password</b></td>
+                        <td><input type="password" id="inputCreateAccountPassword" class="inputCustom1"
+                                   name="password" placeholder="Something123" title="Password must have at least 8 characters which can be any of a-z, 0-9, or _!@#$%^&*\-+?=|."/> <br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Email</b></td>
+                        <td><input type="text" id="inputCreateAccountEmail" class="inputCustom1"
+                                   name="email" placeholder="abc123@123.com"/> <br></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="buttonCreateAccount" type="button" class="buttonCustom1">Create Account</button>
+                            <br>
+                            <label id="labelCreateAccountMessage"></label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+</div>

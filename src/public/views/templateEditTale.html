@@ -1,0 +1,80 @@
+<!-- Edit tale -->
+<div id="divEditTale">
+
+    <!-- Sidebar -->
+    <div id="divSidebar" class="layoutBG">
+
+        <div class="divSidebarHeading layoutBG">
+            <h1 class="center">Edit Tale</h1>
+        </div>
+
+        <hr class="hrSidebar">
+
+        <div class="divSidebarInner layoutBG">
+
+            <!-- Actions -->
+            <h2 class="h2Sidebar">Actions</h2>
+            <hr class="hrSidebar">
+            <div id="divActions"  class="layoutBG">
+                <button class="buttonCustom2" id="buttonAddRow" title="Add a new Row to this Tale">Add Row</button>
+            </div>
+
+            <!-- View Type -->
+            <hr class="hrSidebar">
+            <h2 class="h2Sidebar">View Type</h2>
+            <hr class="hrSidebar">
+            <div id="divRadioButtons"  class="layoutBG">
+                <input type="radio" name="radioViewType" id="radioDetail" checked="true" />
+                <label for="radioDetail">Detail</label>
+                <br>
+                <input type="radio" name="radioViewType" id="radioCollapsed" />
+                <label for="radioCollapsed">Collapsed</label>
+                <br>
+                <input type="radio" name="radioViewType" id="radioCombined" />
+                <label for="radioCombined">Combined</label>
+            </div>
+
+            <!-- Details -->
+            <hr class="hrSidebar">
+            <h2 class="h2Sidebar">Details</h2>
+            <hr class="hrSidebar">
+            <div id="divDetails"  class="layoutBG">
+                <p><b>Title</b> <br> <%- title %></p>
+                <p><b>Category</b> <br> <%- category %></p>
+                <p><b>Description</b> <br> <%- descriptionTale %></p>
+                <p><b>Tags</b> <br> <%- tags.split(",").join(" ") %></p>
+                <p><b>Date Started</b> <br> <%- ST.util.getShortDate(timeCreatedTale) %></p>
+                <p><b>Date Updated</b> <br> <%- ST.util.getShortDate(timeUpdatedTale) %></p>
+            </div>
+
+            <!-- Graph -->
+            <hr class="hrSidebar">
+            <h2 class="h2Sidebar">Graph</h2>
+            <hr class="hrSidebar">
+            <div id="divGraphContainer"  class="layoutBG">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Content -->
+    <div id="divContent" class="layoutBG">
+        <!-- tabindex is for keydown events -->
+        <div id="divContentRowList" class="layoutBG" tabindex="0"></div>
+    </div>
+
+
+    <!-- Shown when combined view is active -->
+    <div id="divContentCombined" class="layoutBG">
+        <div id="divContentCombinedTop" class="layoutBG">
+            <a id="aLinkCollapsedView" class="aLink2">Return to Collapsed View</a>
+            <a id="aLinkDetailView" class="aLink2">Return to Detail View</a>
+        </div>
+
+        <div id="divContentCombinedContent" class="layoutBG"></div>
+    </div>
+
+
+
+</div>

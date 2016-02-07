@@ -1,0 +1,214 @@
+$divSearchBarContainerHeight: 60px;
+$divPaginationContainerHeight: 60px;
+
+$divPaginationPageCountWidth: 130px;
+$divPaginationGoToWidth: 320px;
+
+#divSearchMain {
+    overflow: hidden;
+
+    // sidebar
+    #divSidebar .divSidebarInner {
+
+        #divCheckboxes, #tableSerachDateStarted, #divSortBy {
+            margin: 5px 0 25px 15px;
+            font-size: 0.85em;
+        }
+
+        #inputFromDate, #inputToDate {
+            margin: 5px;
+        }
+    }
+
+
+    // main content div
+    #divContent {
+        height: 100%;
+        width: calc(100% - #{$divSidebarWidth});
+        float: right;
+
+        // search bar container
+        #divSearchBarContainer {
+            height: $divSearchBarContainerHeight;
+            position: relative;
+
+            #divSearchBar {
+                width: 80%;
+
+                #inputSearchBar {
+                    position: relative;
+                    width: calc(100% - 150px);
+                }
+
+                #buttonSearchBar {
+                    float: right;
+                }
+            }
+        }
+
+
+
+
+        // search results container (tale listbox)
+        #divSearchResults {
+            overflow-y: auto;
+            height: calc(100% - #{$divSearchBarContainerHeight} - #{$divPaginationContainerHeight});
+        }
+
+
+
+
+        // Pagination container
+        #divPaginationContainer {
+            display: block;
+            position: relative;
+            bottom: 0px;
+            height: $divPaginationContainerHeight;
+
+
+
+            // left div
+            #divPaginationPageCount {
+                width: $divPaginationPageCountWidth;
+                height: $divPaginationContainerHeight;
+                float: left;
+
+                #divPaginationPageCountInner {
+                    position: relative;
+
+                    #h3PaginationPage {
+                        text-align: center;
+                        margin: 0px;
+                        padding: 0px;
+                    }
+
+                    #labelResults {
+                        display: block;
+                        text-align: center;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+
+
+
+            // middle div
+            #divPaginationLinksContainer {
+                position: relative;
+                display: inline-block;
+                width: calc(100% - #{$divPaginationPageCountWidth} - #{$divPaginationGoToWidth});
+                height: $divPaginationContainerHeight;
+
+                #divPaginationLinks {
+                    white-space: nowrap;
+                }
+
+                #divPaginationLinks > a {
+                    margin: 0 5px 0 5px;
+                }
+
+                .aLinkPagination {
+                    background-color: $divNavBarColor;
+                    padding: 2px 15px 2px 15px;
+                    border-radius: 3px;
+                }
+            }
+
+
+            // right div
+            #divPaginationGoToContainer {
+                float: right;
+                width: $divPaginationGoToWidth;
+                height: $divPaginationContainerHeight;
+
+                #divPaginationGoTo {
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    #inputPaginationPage {
+                        width: 100px;
+                        margin: 0 10px 0 10px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// single tale item
+.divTaleItem {
+    position: relative;
+    border-bottom: 1px solid $horizontalRuleColor;
+    padding: 0 20px 0 10px;
+    height: 88px;
+
+    // points
+    .divTaleItemLeft {
+        position: relative;
+        float: left;
+        width: 60px;
+        height: 100%;
+
+        .labelPoints {
+        }
+    }
+
+    // image
+    .divTaleItemImage {
+        position: relative;
+        float: left;
+        width: 90px;
+        height: 100%;
+    }
+
+    // content
+    .divTaleItemRight {
+        float: right;
+        width: calc(100% - 150px);
+    }
+
+    .divTaleItemTitle {
+        font-weight: bold;
+        display: inline-block;
+        margin: 5px 5px 5px 20px;
+    }
+
+    .divTaleItemCategory {
+        float: right;
+        margin: 5px;
+    }
+
+    .divTaleItemDate {
+        font-size: 0.8em;
+        margin: 0 5px 0 5px;
+        white-space: nowrap;
+    }
+
+    .divTaleItemDescription {
+        display: block;
+        padding: 0 0 0 10px;
+        font-size: 0.8em;
+        max-height: 50px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &:hover {
+        background-color: $divNavBarColor;
+    }
+}
+
+.imgTaleItem:hover {
+    pointer-events: all;
+    cursor: pointer;
+    box-shadow: 0 0 3px $linkColor1;
+}

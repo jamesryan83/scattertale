@@ -1,0 +1,24 @@
+
+
+# Stuff added by github
+logs
+*.log
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.grunt
+.lock-wscript
+build/Release
+
+
+
+# My Stuff
+_mygit*
+src/node_modules
+
+/src/public/lib/dev
+
+.env
+notes.txt

@@ -1,0 +1,51 @@
+$divEditingContainerHeight: 50px;
+$divTopHeight: 40px;
+
+#divEditItem {
+
+    #divTop {
+        height: $divTopHeight;
+        width: 100%;
+        position: relative;
+        text-align: center;
+
+        a {
+            line-height: $divTopHeight;
+        }
+    }
+
+    #divContent {
+        background-color: $backgroundColor1;
+        float: right;
+        height: calc(100% - #{$divTopHeight});
+        width: 100%;
+
+        #divContentContainer {
+            height: calc(100% - #{$divEditingContainerHeight});
+            overflow-y: auto;
+
+            #divEditorTextArea {
+                box-shadow: 1px 1px 1px 1px $contentAreaShadowColor;
+                background-color: $divContentColor1;
+                margin: 0 15px 25px 15px;
+                padding: 25px;
+                outline: 0;
+            }
+        }
+
+        #divEditingContainer {
+            height: $divEditingContainerHeight;
+            bottom: 0;
+            margin: 0 15px;
+
+            #divEditingTop {
+
+            }
+
+            #divEditingBottom {
+                display: none;
+            }
+        }
+    }
+
+}

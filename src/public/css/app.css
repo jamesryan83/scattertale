@@ -1,0 +1,735 @@
+@font-face {
+  font-family: "open-sans";
+  src: url(../res/open-sans/OpenSans-Regular.ttf); }
+
+@font-face {
+  font-family: "open-sans-light";
+  src: url(../res/open-sans/OpenSans-Light.ttf); }
+
+/* Variables */
+/* Imports */
+/* Positioning and stuff */
+.noMarginPadding {
+  margin: 0;
+  padding: 0; }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.centerVertical {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.centerHorizontal {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* Components and Other stuff */
+.buttonCustom1 {
+  border: 0;
+  color: #666;
+  padding: 7px 35px 7px 35px;
+  border-radius: 5px;
+  pointer-events: all; }
+  .buttonCustom1:focus {
+    outline: 0;
+    pointer-events: all; }
+  .buttonCustom1:active {
+    -webkit-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95); }
+
+.buttonCustom2 {
+  border: 0;
+  color: #666;
+  padding: 3px 35px 3px 35px;
+  border-radius: 5px;
+  pointer-events: all; }
+  .buttonCustom2:hover {
+    background-color: #ff9971; }
+  .buttonCustom2:active {
+    -webkit-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95); }
+
+.hrCustom1 {
+  margin-right: 20px;
+  border: 0;
+  height: 1px;
+  background: #dddddd; }
+
+.inputCustom1 {
+  border-radius: 5px;
+  border: 0;
+  height: 30px;
+  width: 220px;
+  padding: 5px;
+  pointer-events: all; }
+
+input {
+  font-weight: normal; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
+.textareaCustom1 {
+  width: 220px;
+  border-radius: 5px;
+  border: 0;
+  padding: 5px;
+  resize: none; }
+
+.noselect {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Anchor links */
+.aLink, .aLink:visited {
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #666;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  white-space: nowrap;
+  pointer-events: all; }
+  .aLink:hover, .aLink:visited:hover {
+    -webkit-animation: bounce 0.2s;
+    animation: bounce 0.2s;
+    color: #FF753E;
+    cursor: pointer;
+    pointer-events: all; }
+
+.aLink2, .aLink2:visited {
+  color: #FF753E; }
+  .aLink2:hover, .aLink2:visited:hover {
+    -webkit-animation: bounce 0.2s;
+    animation: bounce 0.2s;
+    color: #FF753E;
+    cursor: pointer;
+    pointer-events: all; }
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50% {
+    -webkit-transform: scale(0.9, 0.9);
+    transform: scale(0.9, 0.9); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50% {
+    -webkit-transform: scale(0.9, 0.9);
+    transform: scale(0.9, 0.9); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+#divIndexMain {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: -webkit-radial-gradient(center ellipse, #f2f2f2 0%, #e9e9e9 100%);
+  background: radial-gradient(ellipse at center, #f2f2f2 0%, #e9e9e9 100%);
+  /* Title */
+  /* Forms */ }
+  #divIndexMain .divForm {
+    display: inline-block;
+    width: 350px;
+    height: 210px; }
+  #divIndexMain .tableForm td {
+    padding: 5px; }
+  #divIndexMain #labelLoginMessage, #divIndexMain #labelCreateAccountMessage {
+    margin-top: 5px;
+    color: red;
+    white-space: nowrap;
+    float: right; }
+  #divIndexMain #divBackground {
+    pointer-events: all;
+    width: 100%;
+    height: 100%; }
+  #divIndexMain #imgUnderConstruction {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+    margin-bottom: 10px; }
+  #divIndexMain #divTopRight {
+    position: absolute;
+    top: 20px;
+    right: 20px; }
+    #divIndexMain #divTopRight #labelAbout {
+      float: left;
+      line-height: 35px; }
+    #divIndexMain #divTopRight #buttonAbout {
+      float: left;
+      background-color: #ff9971; }
+    #divIndexMain #divTopRight #buttonTryItOut {
+      float: left;
+      background-color: #ffce4b; }
+  #divIndexMain #divTitle {
+    position: absolute;
+    left: 40px;
+    top: 60px;
+    pointer-events: all; }
+    #divIndexMain #divTitle #imgTitle {
+      position: relative;
+      left: -70px;
+      display: block; }
+    #divIndexMain #divTitle #imgSearchIcon, #divIndexMain #divTitle #inputSearch, #divIndexMain #divTitle #buttonSearch {
+      position: relative;
+      margin-left: 5px;
+      margin-right: 5px; }
+    #divIndexMain #divTitle #inputSearch {
+      width: 290px; }
+    #divIndexMain #divTitle #imgSearchIcon {
+      top: 4px; }
+  #divIndexMain #divFormsContainer {
+    position: absolute;
+    width: 100%;
+    min-width: 720px;
+    max-width: 900px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none; }
+    #divIndexMain #divFormsContainer #divFormLogin {
+      float: left; }
+    #divIndexMain #divFormsContainer #divFormLogin button {
+      background-color: #2AD4FF;
+      margin-right: 5px;
+      float: right; }
+    #divIndexMain #divFormsContainer #divFormCreateAccount {
+      float: right; }
+    #divIndexMain #divFormsContainer #divFormCreateAccount button {
+      background-color: #2AFF7A;
+      margin-right: 5px;
+      float: right; }
+  #divIndexMain #divFormsContainer table {
+    margin-left: auto;
+    margin-right: auto; }
+
+#divEditTale #divSidebar .divSidebarInner #divActions, #divEditTale #divSidebar .divSidebarInner #divRadioButtons, #divEditTale #divSidebar .divSidebarInner #divDetails {
+  margin: 5px 0 25px 15px;
+  font-size: 0.85em; }
+
+#divEditTale #divSidebar .divSidebarInner #divActions {
+  margin-top: 10px; }
+
+#divEditTale #divSidebar .divSidebarInner #divDetails > p, #divEditTale #divSidebar .divSidebarInner #divRadioButtons > input {
+  margin: 5px 0; }
+
+#divEditTale #divSidebar .divSidebarInner #divRadioButtons > input[type="radio"], #divEditTale #divSidebar .divSidebarInner #divRadioButtons > label {
+  cursor: pointer; }
+
+#divEditTale #divSidebar .divSidebarInner #divGraphContainer {
+  width: 100%;
+  margin: 10px 0 20px 0; }
+  #divEditTale #divSidebar .divSidebarInner #divGraphContainer .divGraphRow {
+    width: 100%;
+    text-align: center;
+    white-space: nowrap; }
+    #divEditTale #divSidebar .divSidebarInner #divGraphContainer .divGraphRow .divGraphItemContainer {
+      display: inline-block;
+      padding: 1px; }
+      #divEditTale #divSidebar .divSidebarInner #divGraphContainer .divGraphRow .divGraphItemContainer .divGraphItemActive {
+        height: 20px;
+        background-color: #FF753E; }
+      #divEditTale #divSidebar .divSidebarInner #divGraphContainer .divGraphRow .divGraphItemContainer .divGraphItemInactive {
+        height: 20px;
+        background-color: #b3b3b3; }
+      #divEditTale #divSidebar .divSidebarInner #divGraphContainer .divGraphRow .divGraphItemContainer .divGraphItemActive:hover, #divEditTale #divSidebar .divSidebarInner #divGraphContainer .divGraphRow .divGraphItemContainer .divGraphItemInactive:hover {
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9); }
+
+#divEditTale #divContent {
+  height: 100%;
+  width: calc(100% - 320px);
+  float: right; }
+  #divEditTale #divContent #divContentRowList {
+    height: 100%;
+    width: 100%;
+    padding: 10px 0;
+    overflow-y: scroll; }
+    #divEditTale #divContent #divContentRowList .divEditTaleRow {
+      position: relative;
+      display: block; }
+      #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent {
+        display: table;
+        width: 100%;
+        margin-bottom: 5px; }
+        #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentLeft, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentRight {
+          width: 40px; }
+        #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowArrowButton {
+          height: 90%;
+          width: 70%; }
+          #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowArrowButton:hover {
+            background-color: #b3b3b3; }
+        #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle {
+          width: calc(100% - (40px * 2));
+          padding: 0 10px 5px 10px; }
+          #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowContentContainer {
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9; }
+          #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowContentArea {
+            padding: 15px;
+            outline: none; }
+          #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails {
+            padding: 0 10px;
+            background-color: #f2f2f2;
+            height: 25px; }
+            #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divRowDetailsLeft {
+              width: calc(100% - 100px);
+              float: left; }
+              #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divRowDetailsLeft .divRowLabel {
+                font-size: 0.8em;
+                line-height: 0.8em;
+                display: inline-block;
+                margin: 0 10px 10px 0;
+                padding: 0; }
+              #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divRowDetailsLeft .divRowItemIcons {
+                display: inline-block; }
+                #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divRowDetailsLeft .divRowItemIcons .divRowItemIcon {
+                  display: inline-block;
+                  vertical-align: middle;
+                  height: 10px;
+                  width: 10px;
+                  background-color: #c6c6c6;
+                  margin: 0 3px;
+                  border-radius: 2px; }
+            #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer {
+              float: right;
+              width: 100px; }
+              #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages {
+                float: right; }
+                #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowNotes, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowEdit, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowAdd, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowDelete {
+                  height: 15px;
+                  width: 15px;
+                  margin: 0 2px;
+                  vertical-align: middle; }
+                  #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowNotes:hover, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowEdit:hover, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowAdd:hover, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowDelete:hover {
+                    -webkit-animation: bounce 0.2s;
+                    animation: bounce 0.2s; }
+                    #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowNotes:hover path, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowNotes:hover rect, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowEdit:hover path, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowEdit:hover rect, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowAdd:hover path, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowAdd:hover rect, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowDelete:hover path, #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent .divRowContentMiddle .divRowDetails .divImgContainer .divImages .imgRowDelete:hover rect {
+                      fill: #FF753E !important; }
+        #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowContent > div {
+          position: relative;
+          display: table-cell; }
+      #divEditTale #divContent #divContentRowList .divEditTaleRow .divRowEditorContainer {
+        margin-left: calc(40px * 2);
+        margin-right: calc(40px * 2); }
+    #divEditTale #divContent #divContentRowList:focus {
+      outline: none; }
+
+#divEditTale #divContentCombined {
+  width: 100%;
+  position: relative;
+  background-color: #f9f9f9; }
+  #divEditTale #divContentCombined #divContentCombinedTop {
+    height: 35px;
+    line-height: 35px;
+    text-align: center; }
+    #divEditTale #divContentCombined #divContentCombinedTop a {
+      margin: 0 20px; }
+  #divEditTale #divContentCombined #divContentCombinedContent {
+    padding: 20px;
+    height: calc(100% - 35px);
+    overflow-y: auto; }
+
+#divEditTale .selecteditem {
+  box-shadow: 1px 1px 1px 1px #FF753E !important; }
+
+#divEditTale .highlight {
+  background-color: #b3b3b3; }
+
+#divSearchMain {
+  overflow: hidden; }
+  #divSearchMain #divSidebar .divSidebarInner #divCheckboxes, #divSearchMain #divSidebar .divSidebarInner #tableSerachDateStarted, #divSearchMain #divSidebar .divSidebarInner #divSortBy {
+    margin: 5px 0 25px 15px;
+    font-size: 0.85em; }
+  #divSearchMain #divSidebar .divSidebarInner #inputFromDate, #divSearchMain #divSidebar .divSidebarInner #inputToDate {
+    margin: 5px; }
+  #divSearchMain #divContent {
+    height: 100%;
+    width: calc(100% - 320px);
+    float: right; }
+    #divSearchMain #divContent #divSearchBarContainer {
+      height: 60px;
+      position: relative; }
+      #divSearchMain #divContent #divSearchBarContainer #divSearchBar {
+        width: 80%; }
+        #divSearchMain #divContent #divSearchBarContainer #divSearchBar #inputSearchBar {
+          position: relative;
+          width: calc(100% - 150px); }
+        #divSearchMain #divContent #divSearchBarContainer #divSearchBar #buttonSearchBar {
+          float: right; }
+    #divSearchMain #divContent #divSearchResults {
+      overflow-y: auto;
+      height: calc(100% - 60px - 60px); }
+    #divSearchMain #divContent #divPaginationContainer {
+      display: block;
+      position: relative;
+      bottom: 0px;
+      height: 60px; }
+      #divSearchMain #divContent #divPaginationContainer #divPaginationPageCount {
+        width: 130px;
+        height: 60px;
+        float: left; }
+        #divSearchMain #divContent #divPaginationContainer #divPaginationPageCount #divPaginationPageCountInner {
+          position: relative; }
+          #divSearchMain #divContent #divPaginationContainer #divPaginationPageCount #divPaginationPageCountInner #h3PaginationPage {
+            text-align: center;
+            margin: 0px;
+            padding: 0px; }
+          #divSearchMain #divContent #divPaginationContainer #divPaginationPageCount #divPaginationPageCountInner #labelResults {
+            display: block;
+            text-align: center;
+            font-size: 0.8em; }
+      #divSearchMain #divContent #divPaginationContainer #divPaginationLinksContainer {
+        position: relative;
+        display: inline-block;
+        width: calc(100% - 130px - 320px);
+        height: 60px; }
+        #divSearchMain #divContent #divPaginationContainer #divPaginationLinksContainer #divPaginationLinks {
+          white-space: nowrap; }
+        #divSearchMain #divContent #divPaginationContainer #divPaginationLinksContainer #divPaginationLinks > a {
+          margin: 0 5px 0 5px; }
+        #divSearchMain #divContent #divPaginationContainer #divPaginationLinksContainer .aLinkPagination {
+          background-color: #e6e6e6;
+          padding: 2px 15px 2px 15px;
+          border-radius: 3px; }
+      #divSearchMain #divContent #divPaginationContainer #divPaginationGoToContainer {
+        float: right;
+        width: 320px;
+        height: 60px; }
+        #divSearchMain #divContent #divPaginationContainer #divPaginationGoToContainer #divPaginationGoTo {
+          position: relative;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+          #divSearchMain #divContent #divPaginationContainer #divPaginationGoToContainer #divPaginationGoTo #inputPaginationPage {
+            width: 100px;
+            margin: 0 10px 0 10px; }
+
+.divTaleItem {
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+  padding: 0 20px 0 10px;
+  height: 88px; }
+  .divTaleItem .divTaleItemLeft {
+    position: relative;
+    float: left;
+    width: 60px;
+    height: 100%; }
+  .divTaleItem .divTaleItemImage {
+    position: relative;
+    float: left;
+    width: 90px;
+    height: 100%; }
+  .divTaleItem .divTaleItemRight {
+    float: right;
+    width: calc(100% - 150px); }
+  .divTaleItem .divTaleItemTitle {
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px 5px 5px 20px; }
+  .divTaleItem .divTaleItemCategory {
+    float: right;
+    margin: 5px; }
+  .divTaleItem .divTaleItemDate {
+    font-size: 0.8em;
+    margin: 0 5px 0 5px;
+    white-space: nowrap; }
+  .divTaleItem .divTaleItemDescription {
+    display: block;
+    padding: 0 0 0 10px;
+    font-size: 0.8em;
+    max-height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  .divTaleItem:hover {
+    background-color: #e6e6e6; }
+
+.imgTaleItem:hover {
+  pointer-events: all;
+  cursor: pointer;
+  box-shadow: 0 0 3px #FF753E; }
+
+#divHelp {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.95);
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  border-left: 1px solid #de6332; }
+  #divHelp #divHelpContent {
+    padding: 10px; }
+    #divHelp #divHelpContent #buttonCloseHelp {
+      float: right; }
+
+#divEditItem #divTop {
+  height: 40px;
+  width: 100%;
+  position: relative;
+  text-align: center; }
+  #divEditItem #divTop a {
+    line-height: 40px; }
+
+#divEditItem #divContent {
+  background-color: #f2f2f2;
+  float: right;
+  height: calc(100% - 40px);
+  width: 100%; }
+  #divEditItem #divContent #divContentContainer {
+    height: calc(100% - 50px);
+    overflow-y: auto; }
+    #divEditItem #divContent #divContentContainer #divEditorTextArea {
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+      background-color: #f9f9f9;
+      margin: 0 15px 25px 15px;
+      padding: 25px;
+      outline: 0; }
+  #divEditItem #divContent #divEditingContainer {
+    height: 50px;
+    bottom: 0;
+    margin: 0 15px; }
+    #divEditItem #divContent #divEditingContainer #divEditingBottom {
+      display: none; }
+
+#divAccount #divSidebar .divSidebarInner .h2Sidebar:hover {
+  cursor: pointer;
+  pointer-events: all;
+  color: #FF753E; }
+
+#divAccount #divContent {
+  height: 100%;
+  width: calc(100% - 320px);
+  float: right;
+  overflow-y: auto; }
+  #divAccount #divContent #divMyTales {
+    width: 100%; }
+    #divAccount #divContent #divMyTales .divMyTaleItem {
+      display: inline;
+      float: left;
+      margin: 5px;
+      width: 23%; }
+      #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner {
+        background-color: white;
+        padding: 15px;
+        height: 152px;
+        border-radius: 3px;
+        pointer-events: all;
+        overflow: hidden;
+        position: relative; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner p {
+          pointer-events: none; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .pTitle {
+          font-size: 1.2em;
+          font-weight: bold; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .pCategory, #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .pPrivate {
+          font-size: 0.8em; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .pDescription {
+          font-size: 0.8em;
+          text-overflow: ellipsis;
+          overflow: hidden; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner:hover {
+          box-shadow: 0 0 5px #FF753E !important; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgEditButton, #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgDeleteButton {
+          position: absolute;
+          top: 0;
+          height: 15px;
+          width: 15px;
+          margin: 10px; }
+          #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgEditButton:hover, #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgDeleteButton:hover {
+            -webkit-animation: bounce 0.2s;
+            animation: bounce 0.2s; }
+            #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgEditButton:hover path, #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgEditButton:hover rect, #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgDeleteButton:hover path, #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgDeleteButton:hover rect {
+              fill: #FF753E !important; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgEditButton {
+          right: 25px; }
+        #divAccount #divContent #divMyTales .divMyTaleItem .divMyTaleItemInner .imgDeleteButton {
+          right: 0; }
+  #divAccount #divContent #divAccountDetails {
+    position: relative;
+    width: 500px;
+    margin: 20px; }
+    #divAccount #divContent #divAccountDetails #divPicture {
+      position: absolute;
+      top: 0;
+      right: 0; }
+      #divAccount #divContent #divAccountDetails #divPicture #inputUploadPicture {
+        position: absolute;
+        top: -200px; }
+      #divAccount #divContent #divAccountDetails #divPicture #aLinkPicture {
+        float: right; }
+    #divAccount #divContent #divAccountDetails #inputAccountDescription {
+      width: 500px; }
+    #divAccount #divContent #divAccountDetails > p {
+      margin-bottom: 15px; }
+      #divAccount #divContent #divAccountDetails > p > input {
+        width: 300px; }
+    #divAccount #divContent #divAccountDetails #divButtons #buttonAccountSave {
+      margin: 20px;
+      background-color: #2AFF7A; }
+    #divAccount #divContent #divAccountDetails #divButtons #buttonAccountDelete {
+      float: right;
+      margin: 20px;
+      background-color: #fd7f7f; }
+
+#divAccount #divAccountNotLoggedIn {
+  margin: 20px 0 0 20px; }
+
+#divAbout {
+  margin-left: 40px;
+  overflow: auto;
+  height: 100%; }
+  #divAbout #h1AboutHeading {
+    margin: 0;
+    padding: 30px 0 20px 0;
+    line-height: 1em; }
+  #divAbout #divContent {
+    margin-left: 20px;
+    padding-bottom: 20px; }
+    #divAbout #divContent > img {
+      padding-top: 20px; }
+    #divAbout #divContent h3:first-of-type {
+      padding-top: 0px; }
+    #divAbout #divContent > h3 {
+      padding: 15px 0 5px 0; }
+    #divAbout #divContent > p {
+      padding: 5px; }
+
+#divSidebar {
+  height: 100%;
+  width: 320px;
+  background-color: #f2f2f2;
+  float: left;
+  overflow-y: auto; }
+  #divSidebar .divSidebarHeading {
+    position: relative;
+    height: 40px; }
+    #divSidebar .divSidebarHeading > h1 {
+      margin: 0;
+      font-size: 1.4em; }
+  #divSidebar .divSidebarInner {
+    margin: 0 10px 10px 10px; }
+    #divSidebar .divSidebarInner > .hrSidebar {
+      margin: 0 0 0 15px; }
+  #divSidebar .h2Sidebar {
+    font-size: 1.1em;
+    margin: 5px;
+    cursor: default; }
+  #divSidebar .hrSidebar {
+    background: #dddddd;
+    border: 0;
+    height: 1px; }
+  #divSidebar .hrSidebarTop {
+    margin-top: 20px; }
+
+#divDialogNewTale, #divDialogEditTale {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #FF753E;
+  border-radius: 5px; }
+  #divDialogNewTale h2, #divDialogEditTale h2 {
+    text-align: center; }
+  #divDialogNewTale table, #divDialogEditTale table {
+    margin-top: 5px; }
+    #divDialogNewTale table td, #divDialogEditTale table td {
+      padding: 5px 0 5px 10px; }
+    #divDialogNewTale table select, #divDialogNewTale table textArea, #divDialogNewTale table input, #divDialogEditTale table select, #divDialogEditTale table textArea, #divDialogEditTale table input {
+      width: 300px; }
+    #divDialogNewTale table #selectDialogCategory, #divDialogEditTale table #selectDialogCategory {
+      padding: 0; }
+    #divDialogNewTale table #labelStar, #divDialogEditTale table #labelStar {
+      color: red; }
+    #divDialogNewTale table #inputDialogPrivate, #divDialogEditTale table #inputDialogPrivate {
+      width: auto; }
+  #divDialogNewTale #divButtons, #divDialogEditTale #divButtons {
+    padding: 5px;
+    width: 100%;
+    margin-top: 5px; }
+    #divDialogNewTale #divButtons #buttonDialogCreateTale, #divDialogNewTale #divButtons #buttonDialogSave, #divDialogEditTale #divButtons #buttonDialogCreateTale, #divDialogEditTale #divButtons #buttonDialogSave {
+      background-color: #2AFF7A; }
+    #divDialogNewTale #divButtons #buttonDialogCancel, #divDialogEditTale #divButtons #buttonDialogCancel {
+      background-color: #fd7f7f;
+      float: right; }
+
+#divTale #divContent {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 50px;
+  overflow-y: auto; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: open-sans-light;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  color: #666;
+  min-height: 560px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+#divContainerMainNavBar {
+  min-width: 1000px;
+  display: none;
+  height: 40px;
+  background-color: #e6e6e6; }
+  #divContainerMainNavBar #aLinkTitle {
+    float: left;
+    margin-left: 20px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.5em; }
+  #divContainerMainNavBar #divNavBarButtons {
+    position: relative;
+    float: right;
+    padding-right: 20px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    line-height: 40px; }
+
+#divContainerMain {
+  min-width: 1000px;
+  background-color: #f2f2f2;
+  overflow: hidden; }
+
+#divDarkenScreen {
+  min-width: 1000px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: all; }
+
+#divDialogContainer {
+  z-index: 5000; }

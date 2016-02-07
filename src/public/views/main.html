@@ -1,0 +1,154 @@
+<html>
+
+    <head>
+        <script type="text/template" id="templateHelpAccount">
+            {% include ../../../libraries.html %}
+        </script>
+
+        <link rel="stylesheet" href="/lib/pickadate.js-3.5.6/classic.css" />
+        <link rel="stylesheet" href="/lib/pickadate.js-3.5.6/classic.date.css" />
+        <link rel="stylesheet" href="/css/app.css" />
+
+        <script src="/lib/jquery.visible.min.js"></script>
+        <script src="/lib/ckeditor/ckeditor.js"></script>
+
+        <script src="/js/data.js"></script>
+        <script src="/js/util.js"></script>
+    </head>
+
+
+    <body>
+
+        <!-- Navbar -->
+        <div id="divContainerMainNavBar" class="noselect">
+
+            <a href="/" class="aLink" id="aLinkTitle">Scattertale</a>
+
+            <div id="divNavBarButtons" class="layoutBG">
+                <a class="aLink" id="aLinkNavBarNewTale">New Tale</a>
+                <a class="aLink" href="#edit-tale/try-it-out" id="aLinkNavBarTryItOut">Try It Out</a>
+                <a class="aLink" href="#search-tales" id="aLinkNavBarSearch">Search</a>
+                <a class="aLink" href="#account" id="aLinkNavBarAccount">Account</a>
+                <a class="aLink" href="#logout" id="aLinkNavBarLogout">Logout</a>
+                <a class="aLink" href="#" id="aLinkNavBarLogin">Login</a>
+                <a class="aLink" href="#about" id="aLinkNavBarAbout">About</a>
+                <a class="aLink" id="aLinkNavBarHelp">Help</a>
+            </div>
+        </div>
+
+
+        <!-- Main Content Div -->
+        <div id="divContainerMain"></div>
+
+
+        <!-- Help Div -->
+        <div id="divHelp"></div>
+
+
+        <!-- div to go in front of ui elements -->
+        <div id="divDarkenScreen"></div>
+
+
+        <!-- div for dialogs -->
+        <div id="divDialogContainer" class="center"></div>
+
+
+
+
+
+        <!-- -------------------- Templates --------------------- -->
+
+        <!-- 404 page -->
+        <script type="text/template" id="templateFour04">
+            <h1 class="center">404 - Can't find page</h1>
+        </script>
+
+
+        <!-- templates included with htmlcat -->
+        <script type="text/template" id="templateIndex">
+            {% include templateIndex.html %}
+        </script>
+
+        <script type="text/template" id="templateAbout">
+            {% include templateAbout.html %}
+        </script>
+
+        <script type="text/template" id="templateAccount">
+            {% include templateAccount.html %}
+        </script>
+
+        <script type="text/template" id="templateTale">
+            {% include templateTale.html %}
+        </script>
+
+        <script type="text/template" id="templateEditItem">
+            {% include templateEditItem.html %}
+        </script>
+
+        <script type="text/template" id="templateEditTale">
+            {% include templateEditTale.html %}
+        </script>
+
+        <script type="text/template" id="templateEditTaleRow">
+            {% include templateEditTaleRow.html %}
+        </script>
+
+        <script type="text/template" id="templateSearch">
+            {% include templateSearch.html %}
+        </script>
+
+        <script type="text/template" id="templateSearchItem">
+            {% include templateSearchItem.html %}
+        </script>
+
+        <script type="text/template" id="templateAccountTaleItem">
+            {% include templateAccountTaleItem.html %}
+        </script>
+
+        <!-- help templates -->
+        <script type="text/template" id="templateHelpSearch">
+            {% include helpTemplates/templateHelpSearch.html %}
+        </script>
+
+        <script type="text/template" id="templateHelpEditTale">
+            {% include helpTemplates/templateHelpEditTale.html %}
+        </script>
+
+        <script type="text/template" id="templateHelpEditItem">
+            {% include helpTemplates/templateHelpEditItem.html %}
+        </script>
+
+        <script type="text/template" id="templateHelpAccount">
+            {% include helpTemplates/templateHelpAccount.html %}
+        </script>
+
+        <script type="text/template" id="templateHelpAbout">
+            {% include helpTemplates/templateHelpAbout.html %}
+        </script>
+
+        <!-- dialog templates -->
+        <script type="text/template" id="templateDialogNewTale">
+            {% include dialogs/templateDialogNewTale.html %}
+        </script>
+
+        <script type="text/template" id="templateDialogEditTale">
+            {% include dialogs/templateDialogEditTale.html %}
+        </script>
+
+
+
+        <!-- load backbone files -->
+        <script src="/js/view_four04.js"></script>
+        <script src="/js/view_index.js"></script>
+        <script src="/js/view_about.js"></script>
+        <script src="/js/view_tale.js"></script>
+        <script src="/js/view_account.js"></script>
+        <script src="/js/view_editItem.js"></script>
+        <script src="/js/view_editTale.js"></script>
+        <script src="/js/view_search.js"></script>
+        <script src="/js/view_dialog.js"></script>
+        <script src="/js/view_main.js"></script>
+        <script src="/js/router.js"></script>
+    </body>
+
+</html>

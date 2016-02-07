@@ -1,0 +1,134 @@
+
+/* Positioning and stuff */
+.noMarginPadding {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centerVertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.centerHorizontal {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Components and Other stuff */
+.buttonCustom1 {
+    border: 0;
+    color: $fontColor;
+    padding: 7px 35px 7px 35px;
+    border-radius: 5px;
+    pointer-events: all;
+
+    &:focus {
+        outline: 0;
+        pointer-events: all;
+    }
+
+    &:active {
+        transform: scale(0.95, 0.95);
+    }
+}
+
+
+.buttonCustom2 {
+    border: 0;
+    color: $fontColor;
+    padding: 3px 35px 3px 35px;
+    border-radius: 5px;
+    pointer-events: all;
+
+    &:hover {
+        background-color: $buttonColor2;
+    }
+
+    &:active {
+        transform: scale(0.95, 0.95);
+    }
+}
+
+
+
+.hrCustom1 {
+    margin-right: 20px;
+    border: 0;
+    height: 1px;
+    background: $horizontalRuleColor;
+}
+
+.inputCustom1 {
+    border-radius: 5px;
+    border: 0;
+    height: 30px;
+    width: 220px;
+    padding: 5px;
+    pointer-events: all;
+}
+
+input {
+    font-weight: normal;
+}
+
+// remove chrome yellow input color
+// http://stackoverflow.com/a/14205976
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+
+.textareaCustom1 {
+    width: 220px;
+    border-radius: 5px;
+    border: 0;
+    padding: 5px;
+    resize: none;
+}
+
+// http://stackoverflow.com/a/4407335
+.noselect {
+    user-select: none;
+}
+
+
+
+/* Anchor links */
+.aLink, .aLink:visited {
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: $fontColor;
+    backface-visibility: hidden;
+    white-space: nowrap;
+    pointer-events: all;
+
+    &:hover {
+        animation: bounce 0.2s;
+        color: $linkColor1;
+        cursor: pointer;
+        pointer-events: all;
+    }
+}
+
+.aLink2, .aLink2:visited {
+    @extend .alink;
+    color: $linkColor1;
+
+    &:hover {
+        animation: bounce 0.2s;
+        color: $linkColor1;
+        cursor: pointer;
+        pointer-events: all;
+    }
+}

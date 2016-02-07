@@ -1,0 +1,141 @@
+
+#divIndexMain {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    background: radial-gradient(ellipse at center, #f2f2f2 0%, #e9e9e9 100%);
+
+    .divForm {
+        display: inline-block;
+        width: 350px;
+        height: 210px;
+    }
+
+    .tableForm td {
+        padding: 5px;
+    }
+
+    #labelLoginMessage, #labelCreateAccountMessage {
+        margin-top: 5px;
+        color: red;
+        white-space: nowrap;
+        float: right;
+    }
+
+    #divBackground {
+        pointer-events: all;
+        width: 100%;
+        height: 100%;
+    }
+
+    #imgUnderConstruction {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+
+
+
+    // top right buttons
+    #divTopRight {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        #labelAbout {
+            float: left;
+            line-height: 35px;
+        }
+
+        #buttonAbout {
+            float: left;
+            background-color: $buttonColor2;
+        }
+
+        #buttonTryItOut {
+            float: left;
+            background-color: $buttonColor3;
+        }
+
+    }
+
+
+
+
+    /* Title */
+    #divTitle {
+        position: absolute;
+        left: 40px;
+        top: 60px;
+        pointer-events: all;
+
+        #imgTitle {
+            position: relative;
+            left: -70px;
+            display: block;
+        }
+
+        #imgSearchIcon, #inputSearch, #buttonSearch {
+            position: relative;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        #inputSearch {
+            width: 290px;
+        }
+
+        #imgSearchIcon {
+            top: 4px;
+        }
+
+        #buttonSearch {
+
+        }
+    }
+
+
+    /* Forms */
+    #divFormsContainer {
+        position: absolute;
+        width: 100%;
+        min-width: 720px;
+        max-width: 900px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        pointer-events: none;
+
+        #divFormLogin {
+            float: left;
+        }
+
+        #divFormLogin button {
+            background-color: $buttonColor4;
+            margin-right: 5px;
+            float: right;
+        }
+
+        #divFormCreateAccount {
+            float: right;
+        }
+
+        #divFormCreateAccount button {
+            background-color: $buttonColor5;
+            margin-right: 5px;
+            float: right;
+        }
+    }
+
+    #divFormsContainer table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+

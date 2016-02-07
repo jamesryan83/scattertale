@@ -1,0 +1,153 @@
+#divAccount {
+
+    // Sidebar
+    #divSidebar .divSidebarInner {
+
+        .h2Sidebar:hover {
+            cursor: pointer;
+            pointer-events: all;
+            color: $linkColor1;
+        }
+    }
+
+
+    // Content
+    #divContent {
+        height: 100%;
+        width: calc(100% - #{$divSidebarWidth});
+        float: right;
+        overflow-y: auto;
+
+
+        // My Tales
+        #divMyTales {
+            width: 100%;
+
+            .divMyTaleItem {
+                display: inline;
+                float: left;
+                margin: 5px;
+                width: 23%;
+
+
+
+
+                .divMyTaleItemInner {
+                    background-color: white;
+                    padding: 15px;
+                    height: 152px;
+                    border-radius: 3px;
+                    pointer-events: all;
+                    overflow: hidden;
+                    position: relative;
+
+
+                    p {
+                        pointer-events: none;
+                    }
+
+                    .pTitle {
+                        font-size: 1.2em;
+                        font-weight: bold;
+                    }
+
+                    .pCategory, .pPrivate {
+                        font-size: 0.8em;
+                    }
+
+                    .pDescription {
+                        font-size: 0.8em;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 0 5px $linkColor1 !important
+                    }
+
+
+                    // svg images
+                    .imgEditButton, .imgDeleteButton {
+                        position: absolute;
+                        top: 0;
+                        height: 15px;
+                        width: 15px;
+                        margin: 10px;
+
+                        &:hover {
+                            animation: bounce 0.2s;
+
+                            path, rect {
+                                fill: $linkColor1 !important;
+                            }
+                        }
+                    }
+
+                    .imgEditButton {
+                        right: 25px;
+                    }
+
+                    .imgDeleteButton {
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+
+        // Account Details
+        #divAccountDetails {
+            position: relative;
+            width: 500px;
+            margin: 20px;
+
+            #divPicture {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                #inputUploadPicture {
+                    position: absolute;
+                    top: -200px;  // hide offscreen
+                }
+
+                #aLinkPicture {
+                    float: right;
+                }
+            }
+
+            #inputAccountDescription {
+                width: 500px;
+            }
+
+            > p {
+                margin-bottom: 15px;
+
+                > input {
+                    width: 300px;
+                }
+            }
+
+            #divButtons {
+                #buttonAccountSave {
+                    margin: 20px;
+                    background-color: $buttonColor5;
+                }
+
+                #buttonAccountDelete {
+                    float: right;
+                    margin: 20px;
+                    background-color: $buttonColor6;
+                }
+            }
+
+        }
+    }
+
+
+
+    // Shows when not logged in
+    #divAccountNotLoggedIn {
+        margin: 20px 0 0 20px;
+    }
+}

@@ -1,0 +1,49 @@
+#divDialogNewTale, #divDialogEditTale {
+    background-color: $backgroundColor1;
+    padding: 10px;
+    border: 1px solid $linkColor1;
+    border-radius: 5px;
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        margin-top: 5px;
+
+        td {
+            padding: 5px 0 5px 10px;
+        }
+
+        select, textArea, input {
+            width: 300px;
+        }
+
+        #selectDialogCategory {
+            padding: 0;
+        }
+
+        #labelStar {
+            color: red;
+        }
+
+        #inputDialogPrivate {
+            width: auto;
+        }
+    }
+
+    #divButtons {
+        padding: 5px;
+        width: 100%;
+        margin-top: 5px;
+
+        #buttonDialogCreateTale, #buttonDialogSave {
+            background-color: $buttonColor5;
+        }
+
+        #buttonDialogCancel {
+            background-color: $buttonColor6;
+            float: right;
+        }
+    }
+}

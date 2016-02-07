@@ -1,0 +1,907 @@
+<html>
+
+    <head>
+        <script type="text/template" id="templateHelpAccount">
+            <link rel="stylesheet" href="/lib/dev/normalize.min.css" />
+<script src="/lib/dev/jquery-2.1.4.min.js"></script>
+<script src="/lib/dev/underscore.min.js"></script>
+<script src="/lib/dev/backbone.min.js"></script>
+<script src="/lib/dev/picker.js"></script>
+<script src="/lib/dev/picker.date.js"></script>
+<script src="/lib/dev/moment.min.js"></script>
+<script src="/lib/dev/d3.min.js"></script>
+
+        </script>
+
+        <link rel="stylesheet" href="/lib/pickadate.js-3.5.6/classic.css" />
+        <link rel="stylesheet" href="/lib/pickadate.js-3.5.6/classic.date.css" />
+        <link rel="stylesheet" href="/css/app.css" />
+
+        <script src="/lib/jquery.visible.min.js"></script>
+        <script src="/lib/ckeditor/ckeditor.js"></script>
+
+        <script src="/js/data.js"></script>
+        <script src="/js/util.js"></script>
+    </head>
+
+
+    <body>
+
+        <!-- Navbar -->
+        <div id="divContainerMainNavBar" class="noselect">
+
+            <a href="/" class="aLink" id="aLinkTitle">Scattertale</a>
+
+            <div id="divNavBarButtons" class="layoutBG">
+                <a class="aLink" id="aLinkNavBarNewTale">New Tale</a>
+                <a class="aLink" href="#edit-tale/try-it-out" id="aLinkNavBarTryItOut">Try It Out</a>
+                <a class="aLink" href="#search-tales" id="aLinkNavBarSearch">Search</a>
+                <a class="aLink" href="#account" id="aLinkNavBarAccount">Account</a>
+                <a class="aLink" href="#logout" id="aLinkNavBarLogout">Logout</a>
+                <a class="aLink" href="#" id="aLinkNavBarLogin">Login</a>
+                <a class="aLink" href="#about" id="aLinkNavBarAbout">About</a>
+                <a class="aLink" id="aLinkNavBarHelp">Help</a>
+            </div>
+        </div>
+
+
+        <!-- Main Content Div -->
+        <div id="divContainerMain"></div>
+
+
+        <!-- Help Div -->
+        <div id="divHelp"></div>
+
+
+        <!-- div to go in front of ui elements -->
+        <div id="divDarkenScreen"></div>
+
+
+        <!-- div for dialogs -->
+        <div id="divDialogContainer" class="center"></div>
+
+
+
+
+
+        <!-- -------------------- Templates --------------------- -->
+
+        <!-- 404 page -->
+        <script type="text/template" id="templateFour04">
+            <h1 class="center">404 - Can't find page</h1>
+        </script>
+
+
+        <!-- templates included with htmlcat -->
+        <script type="text/template" id="templateIndex">
+            <div id="divIndexMain" class="layoutBG">
+
+    <div id="divBackground"></div>
+
+    <img id="imgUnderConstruction" src="../res/website_under_construction1.png" height="120px" />
+
+
+    <!-- Title -->
+    <div id="divTitle" class="layoutBG">
+        <img id="imgTitle" src="res/TitleFrame1.png" />
+        <img id="imgSearchIcon" src="res/search_icon.png" height="20" width="20" />
+        <input id="inputSearch" placeholder="Search..." class="inputCustom1" />
+        <button id="buttonSearch" class="buttonCustom1">Search</button>
+    </div>
+
+
+
+    <!-- Top right corner buttons and stuff -->
+    <div id="divTopRight"  class="layoutBG">
+        <label id="labelAbout">With Scattertale you can write stuff</label>
+        <button id="buttonAbout" class="buttonCustom1">About this site</button>
+        <button id="buttonTryItOut" class="buttonCustom1">Try It Out</button>
+    </div>
+
+
+
+
+    <!-- Forms -->
+    <div id="divFormsContainer" class="layoutBG">
+
+
+
+        <!-- Login -->
+        <div id="divFormLogin" class="divForm layoutBG">
+            <form id="formLogin">
+                <b>Login</b>
+                <hr class="hrCustom1">
+                <table class="tableForm">
+                    <tr>
+                        <td><b>Username</b></td>
+                        <td><input type="text" id="inputLoginUsername" class="inputCustom1"
+                                   name="username" placeholder="Someone" /> <br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password</b></td>
+                        <td><input type="password" id="inputLoginPassword" class="inputCustom1"
+                                   name="password" placeholder="Something123"/> <br></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="buttonLogin" type="button" class="buttonCustom1">Login</button>
+                            <br>
+                            <label id="labelLoginMessage"></label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+
+
+        <!-- Create Account -->
+        <div id="divFormCreateAccount" class="divForm layoutBG">
+            <form id="formCreateAccount">
+                <b>Create Account</b>
+                <hr class="hrCustom1">
+                <table class="tableForm">
+                    <tr>
+                        <td><b>Username</b></td>
+                        <td><input type="text" id="inputCreateAccountUsername" class="inputCustom1"
+                                   name="username" placeholder="Someone"
+                                   title="Username must have between 3 and 25 characters.  You can use a-z, A-Z, 0-9 and ._-"/> <br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password</b></td>
+                        <td><input type="password" id="inputCreateAccountPassword" class="inputCustom1"
+                                   name="password" placeholder="Something123" title="Password must have at least 8 characters which can be any of a-z, 0-9, or _!@#$%^&*\-+?=|."/> <br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Email</b></td>
+                        <td><input type="text" id="inputCreateAccountEmail" class="inputCustom1"
+                                   name="email" placeholder="abc123@123.com"/> <br></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="buttonCreateAccount" type="button" class="buttonCustom1">Create Account</button>
+                            <br>
+                            <label id="labelCreateAccountMessage"></label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateAbout">
+            <!-- About Page -->
+
+<div id="divAbout">
+
+    <h1 id="h1AboutHeading">About Scattertale</h1>
+
+
+    <div id="divContent">
+
+        <h3>1. What is this website ?</h3>
+        <p>Scattertale is for writing on your own or with others</p>
+        <p>Imagine an article that is made up of sections that you can easily rearrange and easily add<br> revisions to any part that you can swap around at any time.  That is what Scattertale does</p>
+        <p>It allows you to easily move text around to create articles and allows different people to work on different parts</p>
+
+
+
+
+        <h3>2. How does it work ?</h3>
+        <p>You create what are called Tales which are like projects</p>
+        <p>A Tale contains one or more Rows and a Row contains one or more Items</p>
+        <p>Think of a Row as a section of an Article and an Item as a revision to a section of an Article</p>
+        <p>An Item could be a single word, a sentence, a paragraph, a page, a chapter or whatever you like</p>
+        <p>By combining one Item from every Row you can create an Article</p>
+        <p>Articles can be published and shared with everyone</p>
+
+        <img src="../res/about1.png" />
+
+
+
+
+
+        <h3>3. Where do I start ?</h3>
+
+        <p>Help is in the top-right corner of the page on every page</p>
+        <p>Remember to click on Help if you get stuck anywhere ! </p>
+        <p>If you haven't used Scattertale before, start by creating an account on the
+        <a class="aLink2" href="#">Home Page</a></p>
+        <p>See an example of how it works by clicking the
+            <a class="aLink2" href="#edit-tale/try-it-out">Try It Out</a> 
+            button on the navigation bar</p>
+        <p>The main search page is
+            <a class="aLink2" href="#search-tales">Here</a>
+            . That's where you can search public tales</p>
+        <br>
+        <br>
+        <p>Please email any questions to james4165@hotmail.com</p>
+    </div>
+
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateAccount">
+            <!-- Account Page -->
+
+<div id="divAccount">
+
+    <% if (loggedIn === true) { %>
+
+        <!-- Sidebar -->
+        <div id="divSidebar">
+
+            <div class="divSidebarHeading layoutBG">
+                <h1 class="center">My Account</h1>
+            </div>
+
+            <hr class="hrSidebar">
+
+            <div class="divSidebarInner">
+                <h2 class="h2Sidebar" id="h2MyTales">My Tales</h2>
+                <hr class="hrSidebar">
+                <h2 class="h2Sidebar" id="h2AccountDetails">Account Details</h2>
+                <hr class="hrSidebar">
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Content -->
+        <div id="divContent">
+
+            <!-- My Tales -->
+            <div id="divMyTales" class="layoutBG">
+            </div>
+
+
+            <!-- Details -->
+            <div id="divAccountDetails"  class="layoutBG">
+                <h2>Account Details</h2>
+                <br>
+                <p>
+                    <b>Display Name</b> <br>
+                    <input id="inputAccountDisplayName" value="<%- displayName %>" class="inputCustom1" />
+                </p>
+
+                <p>
+                    <b>Location</b> <br>
+                    <input id="inputAccountLocation" value="<%- location %>" class="inputCustom1" />
+                </p>
+
+                <p>
+                    <b>Url</b> <br>
+                    <input id="inputAccountUrl" value="<%- url %>" class="inputCustom1" />
+                </p>
+
+                <p>
+                    <b>Description</b> <br>
+                    <input id="inputAccountDescription" value="<%- description %>" class="inputCustom1"/>
+                </p>
+
+                <p><b>Username</b> <%- username %></p>
+
+                <p><b>Email</b> <%- email %></p>
+
+                <p><b>Account Created</b> <%- ST.util.getShortDate(timeCreatedUser) %></p>
+
+                <p><b>Last Updated</b> <%- ST.util.getShortDate(timeUpdatedUser) %></p>
+
+
+                <div id="divPicture" class="layoutBG">
+                    <b>Picture</b>
+                    <input type="file" id="inputUploadPicture" />
+                    <a class="aLink2" id="aLinkPicture">Edit</a>
+
+                    <br>
+                    <img id="imgAccountPicture" height="128" width="128" />
+                </div>
+
+
+                <div id="divButtons"  class="layoutBG">
+                    <button class="buttonCustom2" id="buttonAccountSave">Save Changes</button>
+                    <button class="buttonCustom2" id="buttonAccountDelete">Delete Account</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    <!-- Not logged in, TODO: remove ? not really needed unless typed in url by accident -->
+    <% } else { %>
+
+        <div id="divAccountNotLoggedIn">
+            You're not logged in !
+            <br>
+            <br>
+            You can login or create an account on the <a href="#" class="aLink2">Home Page</a>
+            <br>
+            <br>
+            You need to have an account to create new Tales and promote your stuff and talk to people and whatever
+        </div>
+    <% } %>
+
+
+
+</div>
+
+
+
+        </script>
+
+        <script type="text/template" id="templateTale">
+            <!-- Tale -->
+<div id="divTale">
+    <div id="divContent" class="layoutBG">
+    </div>
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateEditItem">
+            <!-- Edit Item Page -->
+<div id="divEditItem">
+
+    <div id="divTop">
+        <a id="aLinkBack" class="aLink2">Return to Tale</a>
+    </div>
+
+    <!-- Content -->
+    <div id="divContent" class="layoutBG">
+        <div id="divContentContainer" class="layoutBG">
+            <div id="divEditorTextArea" contenteditable="true"></div>
+        </div>
+
+        <div id="divEditingContainer" class="layoutBG">
+            <div id="divEditingTop" class="layoutBG"></div>
+            <div id="divEditingBottom" class="layoutBG"></div>
+        </div>
+    </div>
+
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateEditTale">
+            <!-- Edit tale -->
+<div id="divEditTale">
+
+    <!-- Sidebar -->
+    <div id="divSidebar" class="layoutBG">
+
+        <div class="divSidebarHeading layoutBG">
+            <h1 class="center">Edit Tale</h1>
+        </div>
+
+        <hr class="hrSidebar">
+
+        <div class="divSidebarInner layoutBG">
+
+            <!-- Actions -->
+            <h2 class="h2Sidebar">Actions</h2>
+            <hr class="hrSidebar">
+            <div id="divActions"  class="layoutBG">
+                <button class="buttonCustom2" id="buttonAddRow" title="Add a new Row to this Tale">Add Row</button>
+            </div>
+
+            <!-- View Type -->
+            <hr class="hrSidebar">
+            <h2 class="h2Sidebar">View Type</h2>
+            <hr class="hrSidebar">
+            <div id="divRadioButtons"  class="layoutBG">
+                <input type="radio" name="radioViewType" id="radioDetail" checked="true" />
+                <label for="radioDetail">Detail</label>
+                <br>
+                <input type="radio" name="radioViewType" id="radioCollapsed" />
+                <label for="radioCollapsed">Collapsed</label>
+                <br>
+                <input type="radio" name="radioViewType" id="radioCombined" />
+                <label for="radioCombined">Combined</label>
+            </div>
+
+            <!-- Details -->
+            <hr class="hrSidebar">
+            <h2 class="h2Sidebar">Details</h2>
+            <hr class="hrSidebar">
+            <div id="divDetails"  class="layoutBG">
+                <p><b>Title</b> <br> <%- title %></p>
+                <p><b>Category</b> <br> <%- category %></p>
+                <p><b>Description</b> <br> <%- descriptionTale %></p>
+                <p><b>Tags</b> <br> <%- tags.split(",").join(" ") %></p>
+                <p><b>Date Started</b> <br> <%- ST.util.getShortDate(timeCreatedTale) %></p>
+                <p><b>Date Updated</b> <br> <%- ST.util.getShortDate(timeUpdatedTale) %></p>
+            </div>
+
+            <!-- Graph -->
+            <hr class="hrSidebar">
+            <h2 class="h2Sidebar">Graph</h2>
+            <hr class="hrSidebar">
+            <div id="divGraphContainer"  class="layoutBG">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Content -->
+    <div id="divContent" class="layoutBG">
+        <!-- tabindex is for keydown events -->
+        <div id="divContentRowList" class="layoutBG" tabindex="0"></div>
+    </div>
+
+
+    <!-- Shown when combined view is active -->
+    <div id="divContentCombined" class="layoutBG">
+        <div id="divContentCombinedTop" class="layoutBG">
+            <a id="aLinkCollapsedView" class="aLink2">Return to Collapsed View</a>
+            <a id="aLinkDetailView" class="aLink2">Return to Detail View</a>
+        </div>
+
+        <div id="divContentCombinedContent" class="layoutBG"></div>
+    </div>
+
+
+
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateEditTaleRow">
+            <!-- Single Row on Edit Tale page -->
+
+<!-- Arrows and text -->
+<div class="divRowContent">
+    <div class="divRowContentLeft">
+        <div class="divRowArrowButton center noselect">
+            <img class="center" src="res/svg/arrow_left.svg" height="20" width="20" />
+        </div>
+    </div>
+
+    <div class="divRowContentMiddle"  draggable="false">
+
+        <div class="divRowContentContainer" draggable="false">
+
+            <div class="divRowDetails noselect" data-rowNumber="<%- rowNumber %>">
+
+                <div class="divRowDetailsLeft">
+                    <div class="divRowLabel">
+                        <b>Row</b> <label><%- rowNumber + 1 %></label>
+                    </div>
+                    <div class="divRowLabel">
+                        <b>Item</b> <label><%- itemNumber + 1 %></label>
+                    </div>
+                    <div class="divRowLabel">
+                        <b>Total Items</b> <label><%- totalItems %></label>
+                    </div>
+                    <div class="divRowLabel">
+                        <b>Author</b> <label><%- author %></label>
+                    </div>
+                    <div class="divRowItemIcons">
+                    </div>
+                </div>
+
+                <div class="divImgContainer">
+                    <div class="divImages">
+                        <img class="svg imgRowNotes" src="res/svg/icon_notes.svg" />
+                        <img class="svg imgRowEdit" src="res/svg/icon_edit.svg" />
+                        <img class="svg imgRowAdd" src="res/svg/icon_add.svg" />
+                        <img class="svg imgRowDelete" src="res/svg/icon_delete.svg" />
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- This div here is the Item part of the Row -->
+            <div id="divRowContentArea<%- rowNumber %>" class="divRowContentArea"  draggable="false"></div>
+        </div>
+    </div>
+
+    <div class="divRowContentRight">
+        <div class="divRowArrowButton center noselect">
+            <img class="center" src="res/svg/arrow_right.svg" height="20" width="20" />
+        </div>
+    </div>
+</div>
+
+
+<!-- For ckeditor -->
+<div class="divRowEditorContainer">
+    <div id="divRowEditingTop<%- rowNumber %>"></div>
+    <div id="divRowEditingBottom<%- rowNumber %>"></div>
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateSearch">
+            <!-- Search page -->
+<div id="divSearchMain" class="layoutBG">
+
+    <!-- Sidebar -->
+    <div id="divSidebar" class="layoutBG">
+
+        <div class="divSidebarHeading layoutBG">
+            <h1 class="center">Search</h1>
+        </div>
+
+        <hr class="hrSidebar">
+
+        <div class="divSidebarInner">
+
+            <!-- search by -->
+            <h2 class="h2Sidebar">Search By</h2>
+            <hr class="hrSidebar">
+            <div id="divCheckboxes">
+                <input type="checkbox" id="checkboxSearchTitle" checked="true" />
+                <label for="checkboxSearchTitle">Title</label>
+                <br>
+                <input type="checkbox" id="checkboxSearchCategory" checked="true" />
+                <label for="checkboxSearchCategory">Category</label>
+                <br>
+                <input type="checkbox" id="checkboxSearchDescription" checked="true" />
+                <label for="checkboxSearchDescription">Description</label>
+                <br>
+                <input type="checkbox" id="checkboxSearchTags" checked="true" />
+                <label for="checkboxSearchTags">Tags</label>
+            </div>
+
+            <!-- date started -->
+            <hr class="hrSidebar hrSidebarTop">
+            <h2 class="h2Sidebar">Date Started</h2>
+            <hr class="hrSidebar">
+            <table id="tableSerachDateStarted">
+                <tr>
+                    <td><label>From</label></td>
+                    <td>
+                        <input id="inputFromDate" class="inputCustom1 datepicker" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>To</label></td>
+                    <td>
+                        <input id="inputToDate" class="inputCustom1 datepicker" />
+                    </td>
+                </tr>
+            </table>
+
+
+            <!-- sort by -->
+            <hr class="hrSidebar hrSidebarTop">
+            <h2 class="h2Sidebar">Sort By</h2>
+            <hr class="hrSidebar">
+            <div id="divSortBy">
+                <input type="radio" name="radioSort" id="radioPoints" checked="true" />
+                <label for="radioPoints">Points</label>
+                <br>
+                <input type="radio" name="radioSort" id="radioDateStarted" />
+                <label for="radioDateStarted">Date Started</label>
+                <br>
+                <input type="radio" name="radioSort" id="radioCategories" />
+                <label for="radioCategories">Categories</label>
+                <br>
+                <input type="radio" name="radioSort" id="radioTitle" />
+                <label for="radioTitle">Title</label>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <!-- Main Serach Area -->
+    <div id="divContent" class="layoutBG">
+
+        <!-- search bar -->
+        <div id="divSearchBarContainer" class="layoutBG">
+            <div id="divSearchBar" class="layoutBG center">
+                <input id="inputSearchBar" class="inputCustom1" placeholder="Search..." />
+                <button id="buttonSearchBar" class="buttonCustom2">Search</button>
+            </div>
+        </div>
+
+
+        <!-- search results -->
+        <div id="divSearchResults" class="layoutBG">
+            <div id="divTales" class="layoutBG">
+            </div>
+        </div>
+
+
+        <!-- pagination -->
+        <div id="divPaginationContainer" class="layoutBG noselect">
+
+            <div id="divPaginationPageCount" class="layoutBG">
+                <div id="divPaginationPageCountInner" class="center layoutBG">
+                    <h3 id="h3PaginationPage"></h3>
+                    <label id="labelResults">0 Results</label>
+                </div>
+            </div>
+
+            <div id="divPaginationLinksContainer" class="layoutBG">
+                <div id="divPaginationLinks" class="center layoutBG">
+                    <a id="aLinkPaginationStart" class="aLink">start</a>
+                    <a id="aLinkPaginationPrev" class="aLink aLinkPagination">prev</a>
+                    <a id="aLinkPaginationNext" class="aLink aLinkPagination">next</a>
+                    <a id="aLinkPaginationEnd" class="aLink">end</a>
+                </div>
+            </div>
+
+            <div id="divPaginationGoToContainer">
+                <div id="divPaginationGoTo" class="layoutBG">
+                    Page No.
+                    <input id="inputPaginationPage" type="text" class="inputCustom1"
+                           title="Enter a page number" />
+                    <button id="buttonPaginationGo" class="buttonCustom2">Go</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+        </script>
+
+        <script type="text/template" id="templateSearchItem">
+            <!-- Single item in search page results -->
+
+<div class="divTaleItemLeft">
+    <label class="center labelPoints"><%- points %></label>
+</div>
+
+<div class="divTaleItemImage">
+    <img src="res/taleItemIconDefault.jpg"
+        height="64" width="64" class="center imgTaleItem"></img>
+</div>
+
+<div class="divTaleItemRight">
+    <a class="aLink divTaleItemTitle"><%- title %></a>
+    <label class="divTaleItemCategory" href=""><%- category %></label>
+    <label class="divTaleItemDate">Started: <%- ST.util.getShortDate(timeCreatedTale) %></label>
+    <label class="divTaleItemDescription"><%- descriptionTale %></label>
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateAccountTaleItem">
+            <!-- Account Page MyTale item -->
+<div class="divMyTaleItemInner">
+    <p class="pTitle"><%- title %></p>
+    <p class="pCategory">Category : <i><%- category %></i></p>
+    <p class="pPrivate">Private : <i><%- isPrivate %></i></p>
+    <p class="pDescription"><%- descriptionTale %></p>
+
+    <img class="svg imgEditButton" src="res/svg/icon_edit.svg" />
+    <img class="svg imgDeleteButton" src="res/svg/icon_delete.svg" />
+</div>
+
+        </script>
+
+        <!-- help templates -->
+        <script type="text/template" id="templateHelpSearch">
+            <!-- Help Page - Search -->
+<div id="divHelpContent">
+    <button id="buttonCloseHelp" class="buttonCustom2">Close</button>
+
+    <h1>Search Help</h1>
+
+    <p>On this screen you can search for Tales that other people have written. </p>
+
+    <br>
+    <p>Set the Search Options on the Left.  Type in keywords you want to search for in the search bar at the Top (leave empty for all results), then click the Search button or press Enter.</p>
+
+    <br>
+    <p>You can change the results page with the controls at the bottom of the screen.</p>
+
+    <br>
+    <p>Click on the Picture or Title of a Result to open it</p>
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateHelpEditTale">
+            <!-- Help Page - Edit Tale -->
+<div id="divHelpContent">
+    <button id="buttonCloseHelp" class="buttonCustom2">Close</button>
+
+    <h1>Edit Tale Help</h1>
+    <p>On this screen you can view the content of a single Tale.  Tales are broken up into Rows and Items.  There can be multiple Rows per Tale and multiple Items per Row</p>
+
+    <br>
+    <p>You can use the Arrow Keys to navigate.  Up and Down to change Rows, Left and Right to change Items</p>
+
+    <br>
+    <p>The Row with the Orange border is the currently selected Row</p>
+
+    <br>
+    <p>Push Enter or click the Edit button on the selected Row to edit the Item.  Enter will edit inline and the Edit button will open a new page where you can edit full screen</p>
+
+    <br>
+    <p>Click the Plus button to add a new Item to a Row.  Click the Add Row button on the Sidebar to add a new Row to the Tale</p>
+
+    <br>
+    <p>You can swap two rows by dragging the heading of one row onto the heading of the row you want to swap with</p>
+
+    <br>
+    <p>The Graph in the Sidebar shows all the Items for this Tale and which Items are active.  You can click on the Graph to change the Active Items</p>
+
+    <br>
+    <p>Tales and Items are saved whenever you close editing mode (ie. when you push the esc key when in edit mode), swap items, or go to the edit-item page</p>
+
+
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateHelpEditItem">
+            <!-- Help Page - Edit Item -->
+<div id="divHelpContent">
+    <button id="buttonCloseHelp" class="buttonCustom2">Close</button>
+
+    <h1>Edit Tale Help</h1>
+    <p>On this screen you can edit a single Item from a Tale.</p>
+
+    <br>
+    <p>It works like a normal word processor.  The formatting controls are at the bottom of the page</p>
+
+    <br>
+    <p>Push Escape or click Return to Tale at the top to return to the Edit Tale page</p>
+
+    <br>
+    <p>The content here is saved when you push the esc key or click Return to Tale</p>
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateHelpAccount">
+            <!-- Help Page - Account -->
+<div id="divHelpContent">
+    <button id="buttonCloseHelp" class="buttonCustom2">Close</button>
+
+    <h1>Account Help</h1>
+    <p></p>
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateHelpAbout">
+            <!-- Help Page - About -->
+<div id="divHelpContent">
+    <button id="buttonCloseHelp" class="buttonCustom2">Close</button>
+
+    <h1>About Page Help</h1>
+    ¯\_(ツ)_/¯
+
+
+
+</div>
+
+        </script>
+
+        <!-- dialog templates -->
+        <script type="text/template" id="templateDialogNewTale">
+            <!-- Dialog for creating a new tale -->
+
+<div id="divDialogNewTale"  class="layoutBG">
+
+    <h2> Create a New Tale</h2>
+
+    <table  class="layoutBG">
+        <tr>
+            <td>Category</td>
+            <td><select id="selectDialogCategory" class="inputCustom1" /></td>
+        </tr>
+
+        <tr>
+            <td>Title</td>
+            <td>
+                <input id="inputDialogTitle" type="text" class="inputCustom1" />
+                <label id="labelStar">*</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Description</td>
+            <td><textarea id="textareaDialogDescription" rows="3" class="textareaCustom1" /></td>
+        </tr>
+
+        <tr>
+            <td>Tags</td>
+            <td><input id="inputDialogTags" type="text" class="inputCustom1" title="Add some tags separated by commas" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="inputDialogPrivate">Private</label></td>
+            <td><input id="inputDialogPrivate" type="checkbox" title="Private Tales won't appear in search results" checked="true"/></td>
+        </tr>
+    </table>
+
+    <div id="divButtons" class="layoutBG">
+        <button id="buttonDialogCreateTale" class="buttonCustom2">Create Tale</button>
+        <button id="buttonDialogCancel" class="buttonCustom2">Cancel</button>
+    </div>
+
+</div>
+
+        </script>
+
+        <script type="text/template" id="templateDialogEditTale">
+            <!-- Dialog for editing tale details -->
+
+<div id="divDialogEditTale">
+
+    <h2>Edit Tale Details</h2>
+
+    <table>
+        <tr>
+            <td>Category</td>
+            <td><select id="selectDialogCategory" class="inputCustom1" /></td>
+        </tr>
+
+        <tr>
+            <td>Title</td>
+            <td>
+                <input id="inputDialogTitle" type="text" class="inputCustom1" />
+                <label id="labelStar">*</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Description</td>
+            <td><textarea id="textareaDialogDescription" rows="3" class="textareaCustom1" /></td>
+        </tr>
+
+        <tr>
+            <td>Tags</td>
+            <td><input id="inputDialogTags" type="text" class="inputCustom1" title="Add some tags separated by commas" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="inputDialogPrivate">Private</label></td>
+            <td><input id="inputDialogPrivate" type="checkbox" title="Private Tales won't appear in search results" checked="true"/></td>
+        </tr>
+    </table>
+
+    <div id="divButtons">
+        <button id="buttonDialogSave" class="buttonCustom2">Save</button>
+        <button id="buttonDialogCancel" class="buttonCustom2">Cancel</button>
+    </div>
+
+</div>
+
+        </script>
+
+
+
+        <!-- load backbone files -->
+        <script src="/js/view_four04.js"></script>
+        <script src="/js/view_index.js"></script>
+        <script src="/js/view_about.js"></script>
+        <script src="/js/view_tale.js"></script>
+        <script src="/js/view_account.js"></script>
+        <script src="/js/view_editItem.js"></script>
+        <script src="/js/view_editTale.js"></script>
+        <script src="/js/view_search.js"></script>
+        <script src="/js/view_dialog.js"></script>
+        <script src="/js/view_main.js"></script>
+        <script src="/js/router.js"></script>
+    </body>
+
+</html>

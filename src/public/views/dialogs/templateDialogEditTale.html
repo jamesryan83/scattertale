@@ -1,0 +1,42 @@
+<!-- Dialog for editing tale details -->
+
+<div id="divDialogEditTale">
+
+    <h2>Edit Tale Details</h2>
+
+    <table>
+        <tr>
+            <td>Category</td>
+            <td><select id="selectDialogCategory" class="inputCustom1" /></td>
+        </tr>
+
+        <tr>
+            <td>Title</td>
+            <td>
+                <input id="inputDialogTitle" type="text" class="inputCustom1" />
+                <label id="labelStar">*</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Description</td>
+            <td><textarea id="textareaDialogDescription" rows="3" class="textareaCustom1" /></td>
+        </tr>
+
+        <tr>
+            <td>Tags</td>
+            <td><input id="inputDialogTags" type="text" class="inputCustom1" title="Add some tags separated by commas" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="inputDialogPrivate">Private</label></td>
+            <td><input id="inputDialogPrivate" type="checkbox" title="Private Tales won't appear in search results" checked="true"/></td>
+        </tr>
+    </table>
+
+    <div id="divButtons">
+        <button id="buttonDialogSave" class="buttonCustom2">Save</button>
+        <button id="buttonDialogCancel" class="buttonCustom2">Cancel</button>
+    </div>
+
+</div>

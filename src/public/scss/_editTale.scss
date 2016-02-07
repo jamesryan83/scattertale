@@ -1,0 +1,238 @@
+$divRowContentLeftRightWidth: 40px;
+$divContentCombinedTopHeight: 35px;
+$divImgContainerWidth: 100px;
+
+#divEditTale {
+
+    // Sidebar
+    #divSidebar .divSidebarInner {
+
+        #divActions, #divRadioButtons, #divDetails {
+            margin: 5px 0 25px 15px;
+            font-size: 0.85em;
+        }
+
+        #divActions {
+            margin-top: 10px;
+        }
+
+        #divDetails > p, #divRadioButtons > input {
+            margin: 5px 0;
+        }
+
+        #divRadioButtons > input[type="radio"], #divRadioButtons > label {
+            cursor: pointer;
+        }
+
+
+        // Graph
+        #divGraphContainer {
+            width: 100%;
+            margin: 10px 0 20px 0;
+
+            .divGraphRow {
+                width: 100%;
+                text-align: center;
+                white-space: nowrap;
+
+                .divGraphItemContainer {
+                    display: inline-block;
+                    padding: 1px;
+
+                    .divGraphItemActive {
+                        height: 20px;
+                        background-color: $linkColor1;
+                    }
+
+                    .divGraphItemInactive {
+                        height: 20px;
+                        background-color: $buttonColor1;
+                    }
+
+                    .divGraphItemActive:hover, .divGraphItemInactive:hover {
+                        transform: scale(0.9, 0.9);
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+    // content area
+    #divContent {
+        height: 100%;
+        width: calc(100% - #{$divSidebarWidth});
+        float: right;
+
+
+        // Rowlist view
+        #divContentRowList {
+            height: 100%;
+            width: 100%;
+            padding: 10px 0;
+            overflow-y: scroll;
+
+            .divEditTaleRow {
+                position: relative;
+                display: block;
+
+
+                // content area and arrows
+                .divRowContent {
+                    display: table; // stretches middle divs to full width
+                    width: 100%;
+                    margin-bottom: 5px;
+
+                    .divRowContentLeft, .divRowContentRight {
+                        width: $divRowContentLeftRightWidth;
+                    }
+
+                    .divRowArrowButton {
+                        height: 90%;
+                        width: 70%;
+
+                        &:hover {
+                            background-color: #b3b3b3;
+                        }
+                    }
+
+                    .divRowContentMiddle {
+                        width: calc(100% - (#{$divRowContentLeftRightWidth} * 2));
+                        padding: 0 10px 5px 10px;
+
+                        .divRowContentContainer {
+                            box-shadow: 1px 1px 1px 1px $contentAreaShadowColor;
+                            background-color: $divContentColor1;
+                        }
+
+                        // text is in here
+                        .divRowContentArea {
+                            padding: 15px;
+                            outline: none;
+                        }
+
+
+                        // details row
+                        .divRowDetails {
+                            padding: 0 10px;
+                            background-color: $backgroundColor1;
+                            height: 25px;
+
+                            .divRowDetailsLeft {
+                                width: calc(100% - #{$divImgContainerWidth});
+                                float: left;
+
+                                .divRowLabel {
+                                    font-size: 0.8em;
+                                    line-height: 0.8em;
+                                    display: inline-block;
+                                    margin: 0 10px 10px 0;
+                                    padding: 0;
+                                }
+
+                                .divRowItemIcons {
+                                    display: inline-block;
+
+
+                                    .divRowItemIcon {
+                                        display: inline-block;
+                                        vertical-align: middle;
+                                        height: 10px;
+                                        width: 10px;
+                                        background-color: $arrowColor;
+                                        margin: 0 3px;
+                                        border-radius: 2px;
+                                    }
+                                }
+                            }
+
+
+                            // svg images
+                            .divImgContainer {
+                                float: right;
+                                width: $divImgContainerWidth;
+
+                                .divImages {
+
+                                    float: right;
+
+                                    .imgRowNotes, .imgRowEdit, .imgRowAdd, .imgRowDelete {
+                                        height: 15px;
+                                        width: 15px;
+                                        margin: 0 2px;
+                                        vertical-align: middle;
+
+                                        &:hover {
+                                            animation: bounce 0.2s;
+
+                                            path, rect {
+                                                fill: $linkColor1 !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+
+                    > div {
+                        position: relative;
+                        display: table-cell;
+                    }
+                }
+
+                // ckeditor container
+                .divRowEditorContainer {
+                    margin-left: calc(#{$divRowContentLeftRightWidth} * 2);
+                    margin-right: calc(#{$divRowContentLeftRightWidth} * 2);
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+
+    // combined view
+    #divContentCombined {
+        width: 100%;
+        position: relative;
+        background-color: $divContentColor1;
+
+        // Combined view header
+        #divContentCombinedTop {
+            height: $divContentCombinedTopHeight;
+            line-height: $divContentCombinedTopHeight;
+            text-align: center;
+
+            a {
+                margin: 0 20px;
+            }
+        }
+
+        // content
+        #divContentCombinedContent {
+            padding: 20px;
+            height: calc(100% - #{$divContentCombinedTopHeight});
+            overflow-y: auto;
+        }
+    }
+
+
+
+    .selecteditem {
+        box-shadow: 1px 1px 1px 1px $linkColor1 !important
+    }
+
+    .highlight {
+        background-color: #b3b3b3;
+    }
+}
